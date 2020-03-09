@@ -1,8 +1,15 @@
 head{
 	font-size: 32px;
+	background-color: black;
 }
 a {
 	font-size: 48px;
 	font-family: "Comic Sans MS",cursive, sans-serif;
-	color: purple;
+	color: cyan;
+}
+body {
+	font-size: 12px;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: black;
 }
