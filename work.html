@@ -10,11 +10,36 @@
     </head>
     <body>
         I mostly worked on the input part of our webscraper, which managed four variables: Authentication Token, Twilio Account SID, phone number to send the text to, and twilio number to send the text from.<br>
-        This first screenshot shows the definition of the variables globally, the receiving of input from the user from the command prompt, and looping until the inputs are valid, seeing as both the twilio and phone numbers had to be 10 digit numbers.
-        <img src="images/Code1.png"><br><br><br><br><br>
+        This first section of code shows the definition of the variables globally, the receiving of input from the user from the command prompt, and looping until the inputs are valid, seeing as both the twilio and phone numbers had to be 10 digit numbers.
+                            #Twilio variables definition<br>
+                          global accountSID<br>
+                            global authToken<br>
+                            global phoneNumber<br>
+                            global twilioPhone<br>
+<br>
+                          #use of python input() functions<br>
+                            accountSID = input("Account SID: ") #b<br>
+                            authToken = input("Authorization Token: ") #b<br>
+                            phoneNumber = input("Phone Number: ") #b<br>
+                            twilioPhone = input("Twilio Number: ")<br>
+
+                          #This loop makes sure that all phone number inputs are valid<br>
+                            while (len(phoneNumber) != 10 or not phoneNumber.isdigit()):<br>
+                                print("Phone number should be 10 numbers")<br>
+                                phoneNumber = input("Phone Number: ") #b<br>
+                            while (len(twilioPhone) != 10 or not twilioPhone.isdigit()):<br>
+                                print("Twilio number should be 10 numbers")<br>
+                                twilioPhone = input("Twilio Number: ") #b<br><br><br><br><br>
         
-        This second screenshot then shows the logic used in checking that everything is going well in every part of the webscraper.<br>
-        The ask() function tests if they received the text and redirects the user based on that: going to actually do the webscraping, restarting, or moving on.
-        <img src="images/Code2.png"><br>
+        This second section of code then shows the logic used in checking that everything is going well in every part of the webscraper.<br>
+        The ask() function tests if they received the text and redirects the user based on that: going to actually do the webscraping, restarting, or moving on.<br><br>
+                            def ask(): #b<br>
+                                if (messageReceived == "yes"): #b<br>
+                                    print("Thanks for using the sytem.") #b<br>
+                                elif (messageReceived == "no"): #b<br>
+                                    main() #b<br>
+                                else: #b<br>
+                                    ask() #b<br>
+                            magic()<br>
     </body>
 </html>
